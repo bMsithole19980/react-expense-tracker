@@ -5,10 +5,9 @@ import Home from './Components/home';
 import Login from './Components/login';
 import SignUp from './Components/signUp';
 import NoPageFound from './Components/noPageFound';
-import AddTransaction from './Components/add';
-import DisplayTransiction from './Components/displayTransaction';
 import  {useState} from 'react'
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+
 function App() {
 
   const[transaction, setTransaction ]= useState([]);
