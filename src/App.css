@@ -39,8 +39,9 @@ button{
   height: 30px;
   margin-top: 14px;
   margin-top: 4px;
-
-
 }
- 
+.header{
+  align-items: center;
+  justify-content: center;
+}
  

@@ -5,6 +5,7 @@ function AddTransaction(props){
  const [transactionItem,setTransactionItem]= useState('');
  const [amount, setAmount]= useState(''); 
  const [transactionType, setTransactionType]=useState('');
+ /* */
  const add =(()=>{
   props.add(transactionItem,amount,transactionType);
 

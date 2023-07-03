@@ -21,27 +21,30 @@ function App() {
 
   return (
     // code for navigating through pages(from login to Home page)
-  
-      <Router>
-        <div className='Container'>
-          <Switch>\
-          <Route exact path='/'>
-           <Login/>
-           </Route>
-           <Route path='/home'>
-            <Home add={add} transaction={transaction}/>
-           </Route>
-           <Route path='/signUp'>
-            <SignUp/>
-           </Route>
-           <Route path='*'>
-            <NoPageFound/>
-           </Route>
-           
-          </Switch>
-        
-        </div>
-      </Router>
+      
+    
+      
+    <Router>
+    <div className='Container'>
+      <Switch>
+      <Route exact path='/'>
+       <Login/>
+       </Route>
+       <Route path='/home'>
+        <Home add={add} transaction={transaction}/>
+       </Route>
+       <Route path='/signUp'>
+        <SignUp/>
+       </Route>
+       <Route path='*'>
+        <NoPageFound/>
+       </Route>
+       
+      </Switch>
+    
+    </div>
+  </Router>
+      
    
   )
 }
