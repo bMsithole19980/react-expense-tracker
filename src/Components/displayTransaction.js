@@ -1,13 +1,14 @@
 function DisplayTransiction(props){
     return(
         <div>
+            <br></br>
             <h2>History for transaction</h2>
             {props.transaction.map((data)=>{
                 return (
                     <div>
-                        <h6>{data.transactionItem}</h6>
-                        <h6>{data.transactionType}</h6>
-                        <h6>{data.amount}</h6>
+                        <h5>{data.transactionItem}</h5>
+                        <h5>{data.transactionType}<div className="incomeIndicator"></div><div className="expenseIndicator"></div></h5>
+                        <h5>{data.amount}</h5>
 
                     </div>
 

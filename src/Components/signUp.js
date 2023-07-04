@@ -23,15 +23,15 @@ function SignUp(){
    return(
     <div>
         <h1>Sign up page</h1>
-        <form>
+        
             <h5> Username:</h5>
             <input type="text" onChange={(event)=>setEmail(event.target.value)} placeholder="Enter your username or email"></input>
             <h5>Password:</h5>
             <input type="password" onChange={(event)=>setPassword(event.target.value)} placeholder="Enter  password"></input>
             <br/>
             <button onClick={register}>SignUp</button><br/>
-            <Link to='./Login'>Already have account : Login </Link>
-        </form>
+            <Link to='/'>Already have account : Login </Link>
+
         
         
     </div>

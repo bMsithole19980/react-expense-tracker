@@ -33,6 +33,14 @@ select{
   border: none;
   margin: 15px;
 }
+.incomeIndicator{
+  color: red;
+  width: 100%;
+}
+.expenseIndicator{
+  color: greenyellow;
+  width: 100%;
+}
 
 button{
   width: 300px;
@@ -43,5 +51,15 @@ button{
 .header{
   align-items: center;
   justify-content: center;
+}
+.selectCurrency{
+  width: 246px;
+  margin-left:5px ;
+}
+.showCurrency{
+  width: 513px;
+  height: 40px;
+  background-color: white;
+  display: block;
 }
  
