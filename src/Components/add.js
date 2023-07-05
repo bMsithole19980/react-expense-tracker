@@ -2,12 +2,13 @@ import { useState} from 'react';
 import { db } from '../config/firebase';
 import { collection , addDoc } from 'firebase/firestore';
 import {async} from '@firebase/util';
+
 function AddTransaction(props){
   
  const [transactionItem,setTransactionItem]= useState('');
  const [amount, setAmount]= useState(''); 
  const [transactionType, setTransactionType]=useState('');
- /* */
+
  const add =(async()=>{
   //props.add(transactionItem,amount,transactionType);
   try{
@@ -22,19 +23,17 @@ function AddTransaction(props){
 
   }
   
-  
-  
-
 
   })
 
   return(
     <div>
+      <br></br>
         <h1>Add new transaction</h1>
-        <input type="text" placeholder="Enter item" onChange={(event)=> setTransactionItem(event.target.value)}/><br></br>
-        <input type="text" placeholder="Enter amount" onChange={(event)=>setAmount(event.target.value)                }/>
+        <input required type="text" placeholder="Enter item" onChange={(event)=> setTransactionItem(event.target.value)}/><br></br>
+        <input required type="text" placeholder="Enter amount" onChange={(event)=>setAmount(event.target.value)                }/>
         <br></br>
-        <select onChange={(event)=> setTransactionType(event.target.value)}>
+        <select required onChange={(event)=> setTransactionType(event.target.value)}>
             <option>Income</option>
             <option>Expense</option>
             </select>

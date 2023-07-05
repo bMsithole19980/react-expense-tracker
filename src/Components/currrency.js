@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect ,useState } from 'react';
 
-//API URl fro currency converter
+//API URl for currency converter
 const url="https://api.exchangerate.host/latest";
 
 function CurrrencyConverter() {
@@ -15,8 +15,8 @@ function CurrrencyConverter() {
 
     //fetching data from the api w hen components mounts
     useEffect(()=>{
-        fetch(url).then(res=>res.json()).then((data)=>{
-            console.log(data);
+        fetch(url).then((res)=>res.json()).then((data)=>{
+            //console.log(data);
             const firstCurrency =Object.keys(data.rates)[0];
             setCurrencyOptions([data.base, ...Object.keys(data.rates)]);// Set currency options including the base currency and rates
             setFromCurrency(data.base);   // Set the default "from" currency as the base currency
@@ -29,7 +29,7 @@ function CurrrencyConverter() {
     // Fetching exchange rate when "from" and "to" currencies are selected
     useEffect(()=>{
         if(fromCurrency !=null && toCurrency !=null){
-            fetch(`$(url)?base=${fromCurrency}&symbols=${toCurrency}`).then(res=>res.json()).then((data)=>{
+            fetch(`${url}?base=${fromCurrency}&symbols=${toCurrency}`).then(res=>res.json()).then((data)=>{
                 console.log(data);
                 setExchangeRate(data.rates[toCurrency]);// Set the exchange rate for the selected "to" currency
             }).catch((error) => {
@@ -41,11 +41,14 @@ function CurrrencyConverter() {
 
 
     let toAmount , fromAmount
-    const convertCur=()=>{
-        fromAmount= toAmount;
-        toAmount= amount *exchangeRate;
+
+    const convertCur=(()=>{
+        fromAmount= amount;
+        toAmount= amount * exchangeRate;
         setShowCurrency(toAmount);
-    }
+
+    })
+   
 
 
 

@@ -2,24 +2,16 @@ import { Link } from "react-router-dom"
 import {getAuth ,createUserWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '../config/firebase';
 import { useState } from "react";
+import {  useSelector,useDispatch} from "react-redux";
+import { signUp } from "../authReducer/auth";
+
 
 function SignUp(){
-
     const [email, setEmail]=useState('');
     const [password , setPassword]= useState('');
     
-    
-    const register=(()=>{
-        createUserWithEmailAndPassword(auth,email, password).then(()=>{
-            alert("Successfuly registered");
-
-        }).catch((error)=>{
-            console.log(error.message);
-
-        })
-
-    })
-
+    const dispatch =useDispatch();
+ 
    return(
     <div>
         <h1>Sign up page</h1>
@@ -29,7 +21,7 @@ function SignUp(){
             <h5>Password:</h5>
             <input type="password" onChange={(event)=>setPassword(event.target.value)} placeholder="Enter  password"></input>
             <br/>
-            <button onClick={register}>SignUp</button><br/>
+            <button onClick={()=>dispatch(signUp(email, password))}>SignUp</button><br/>
             <Link to='/'>Already have account : Login </Link>
 
         

@@ -33,13 +33,19 @@ select{
   border: none;
   margin: 15px;
 }
+.expenseIndicator,
 .incomeIndicator{
-  color: red;
-  width: 100%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.incomeIndicator{
+  background-color: red;
+  
 }
 .expenseIndicator{
-  color: greenyellow;
-  width: 100%;
+  background-color: green;
 }
 
 button{
@@ -62,4 +68,8 @@ button{
   background-color: white;
   display: block;
 }
- 
+.transaction{
+  display: flex;
+  align-items: center;
+  gap: 160px;
+}

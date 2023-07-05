@@ -4,9 +4,10 @@ import DisplayTransiction from "./displayTransaction";
 
 function Home(props){
     return(
-        <div>
+        <div className="container">
+         <DisplayTransiction transaction={props.transaction}/>
         <AddTransaction add={props.add}/>
-        <DisplayTransiction transaction={props.transaction}/>
+        
         </div>
     )
              
