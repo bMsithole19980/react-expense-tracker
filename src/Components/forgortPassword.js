@@ -2,17 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import {auth} from '../config/firebase';
 import {sendPasswordResetEmail} from 'firebase/auth';
-
+import { passwordReset } from '../authReducer/auth';
+import { useDispatch } from 'react-redux';
 
 function ForgortPassword() {
   const [email, setEmail]=useState();
 
+  const dispatch =useDispatch();
+  
   const forgortPasswordReset=(()=>{
-    sendPasswordResetEmail(auth,email).then(()=>{
-       alert("check your email");
-    }).catch((error)=>{
-
-    })
+    dispatch(passwordReset(email))
 
   })
   

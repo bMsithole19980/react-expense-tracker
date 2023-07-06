@@ -2,27 +2,24 @@ import { useState} from 'react';
 import { db } from '../config/firebase';
 import { collection , addDoc } from 'firebase/firestore';
 import {async} from '@firebase/util';
-
+import { addTransaction } from '../firestoreReducers/firestore';
+import { useDispatch } from 'react-redux';
 function AddTransaction(props){
   
  const [transactionItem,setTransactionItem]= useState('');
  const [amount, setAmount]= useState(''); 
  const [transactionType, setTransactionType]=useState('');
 
+
+ const dispatch =useDispatch();
  const add =(async()=>{
   //props.add(transactionItem,amount,transactionType);
-  try{
-    const docRef = await addDoc(collection(db ,"transaction"),{
-      transactionItem:transactionItem,
-      amount:amount,
-      transactionType:transactionType
-    });
-    alert("added successfully");
+   dispatch(addTransaction({
 
-  } catch(error){
-
-  }
-  
+    transactionItem:transactionItem,
+    amount:amount,
+    transactionType:transactionType
+   }))
 
   })
 

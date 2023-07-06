@@ -22,7 +22,9 @@ function Login(){
         <input type='text' onChange={(event) => setEmail(event.target.value)} placeholder='Enter your email'></input><br></br>
         <input type='password' onChange={(event) => setPassword(event.target.value)} placeholder='Enter your password'></input><br></br>
         <button onClick={()=>dispatch(signIn(email ,password))}>Login</button><br></br>
+       
         <Link to='/forgotPassword'>forgort Password </Link><br></br>
+      
         <Link to='/signUp'>Don't have account : SignUp </Link>
       
     </div>
