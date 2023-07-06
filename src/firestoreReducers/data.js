@@ -11,6 +11,12 @@ const dataSlice =createSlice({
     name:"data",
     initialState,
     reducers:{
+
+        addData:(state,action)=>{
+            state.data.push(action.payload)
+
+        },
+
         fetchDataStart(state){
             state.loading =true;
             state.error= null;
@@ -28,7 +34,7 @@ const dataSlice =createSlice({
 
     }
 })
-export const {fetchDataStart ,fechDataSuccess ,fetchDataFail} =dataSlice.actions;
+export const {fetchDataStart ,fechDataSuccess ,fetchDataFail, addData} =dataSlice.actions;
 
 export const fetchData =()=>async(dispatch)=>{
     dispatch(fetchDataStart());
@@ -48,4 +54,20 @@ export const fetchData =()=>async(dispatch)=>{
     }
 }
 
-export default dataSlice.reducer
+export  const addTransaction =(data)=>async(dispatch)=>{
+    try {
+        const docRef = await addDoc(collection(db, "transaction"), data);
+        dispatch(addData(data))
+        alert("You have added sucessfully");
+
+    } catch (error) {
+
+    }
+
+
+
+    
+
+}
+
+export default dataSlice.reducer;
