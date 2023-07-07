@@ -57,17 +57,12 @@ export const fetchData =()=>async(dispatch)=>{
 export  const addTransaction =(data)=>async(dispatch)=>{
     try {
         const docRef = await addDoc(collection(db, "transaction"), data);
-        dispatch(addData(data))
+        dispatch(addData(data));
         alert("You have added sucessfully");
 
     } catch (error) {
 
     }
-
-
-
-    
-
 }
 
 export default dataSlice.reducer;

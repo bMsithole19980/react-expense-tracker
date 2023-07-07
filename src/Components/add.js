@@ -2,7 +2,7 @@ import { useState} from 'react';
 import { db } from '../config/firebase';
 import { collection , addDoc } from 'firebase/firestore';
 import {async} from '@firebase/util';
-import { addTransaction } from '../firestoreReducers/firestore';
+import { addTransaction } from '../firestoreReducers/data';
 import { useDispatch } from 'react-redux';
 function AddTransaction(props){
   
